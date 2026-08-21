@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknologi Rekayasa Otomotif - Politeknik Negeri Lampung</title>
+    <link rel="icon" type="image/png" href="img/logo-tro.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primaryBlue: '#0f2c59',
+                        accentBlue: '#337357',
+                        ecoGreen: '#10b981',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    /* Efek Fade-in saat halaman dimuat */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    body {
+        animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    /* Efek halus untuk tombol, kartu, dan gambar */
+    a, button, .rounded-2xl, .rounded-xl {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Efek saat kursor menyentuh kartu (sedikit terangkat) */
+    .rounded-2xl:hover, .rounded-xl:hover {
+        transform: translateY(-3px);
+    }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+   <nav id="navbar" class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+    <img src="img/logo-tro.png" alt="Logo TRO" class="h-10 w-auto">
+    <div>
+        <h1 class="font-extrabold text-blue-900 text-sm">TEKNOLOGI REKAYASA OTOMOTIF</h1>
+    </div>
+</div>
+
+        <!-- Tombol Hamburger (Hanya muncul di HP) -->
+        <button id="menu-btn" class="md:hidden text-blue-900 p-2 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+
+        <!-- Menu Desktop -->
+       <div id="menu" class="hidden md:flex space-x-6 text-sm font-semibold">
+    <a href="index.html" class="text-gray-600 hover:text-blue-900 transition">Beranda</a>
+    <a href="kurikulum.html" class="text-gray-600 hover:text-blue-900 transition">Kurikulum</a>
+    <a href="dosen.html" class="text-blue-900 font-bold transition">Dosen</a>
+    <a href="berita.html" class="text-gray-600 hover:text-blue-900 transition">Berita</a>
+    <a href="kerjasama.html" class="text-gray-600 hover:text-blue-900 transition">Kerjasama</a>
+    </div>
+    </div>
+
+    <!-- Menu HP (Dropdown) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 p-4 space-y-2">
+        <a href="index.html" class="block text-gray-600 font-semibold py-2">Beranda</a>
+        <a href="kurikulum.html" class="block text-gray-600 font-semibold py-2">Kurikulum</a>
+        <a href="dosen.html" class="block text-gray-600 font-semibold py-2">Dosen</a>
+        <a href="berita.html" class="block text-gray-600 font-semibold py-2">Berita</a>
+        <a href="kerjasama.html" class="block text-gray-600 font-semibold py-2">Kerjasama</a>
+    </div>
+</nav>
+
+<script>
+    // Script untuk fungsi klik tombol menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+   <!-- KONTEN DOSEN (6 Orang - 3 Atas, 3 Bawah) -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-extrabold text-blue-900 mb-3">Dosen</h2>
+                <p class="text-gray-600">Didukung oleh Dosen yang berpengalaman dan praktisi industri.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dosen 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border text-center">
+                    <img src="https://ui-avatars.com/api/?name=Retno+Wahyudi&background=e2e8f0&color=475569&size=256" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-lg">Ir. Retno Wahyudi, S.Pd., M.T.</h3>
+                    <p class="text-xs text-gray-500 mb-3">Ketua Program Studi</p>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Konversi Energi</span>
+                </div>
+                <!-- Dosen 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border text-center">
+                    <img src="https://ui-avatars.com/api/?name=Alexander+Sembiring&background=e2e8f0&color=475569&size=256" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-lg">Ir. Agus Apriyanto, S.T., M.T.</h3>
+                    <p class="text-xs text-gray-500 mb-3">Kepala Laboratorium</p>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Konversi Energi</span>
+                </div>
+                <!-- Dosen 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border text-center">
+                    <img src="img/dosen-alex.jpg" alt="Foto Dosen" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-lg">Ir. Alexander Sembiring, S.T., M.T.</h3>
+                    <p class="text-xs text-gray-500 mb-3">Dosen</p>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Mekanika Struktur</span>
+                </div>
+                <!-- Dosen 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border text-center">
+                    <img src="https://ui-avatars.com/api/?name=Agus+Setiawan&background=e2e8f0&color=475569&size=256" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-lg">Ir. Fauzi Ibrahim, S.T., M.T.</h3>
+                    <p class="text-xs text-gray-500 mb-3">Dosen</p>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Material dan Komposit</span>
+                </div>
+                <!-- Dosen 5 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border text-center">
+                    <img src="https://ui-avatars.com/api/?name=Lestari+Nugraheni&background=e2e8f0&color=475569&size=256" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-lg">Ir. Adam Wisnu Murti, S.T., M.T.</h3>
+                    <p class="text-xs text-gray-500 mb-3">Dosen</p>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Mekanika Struktur</span>
+                </div>
+                <!-- Teknisi 6 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border text-center">
+                    <img src="https://ui-avatars.com/api/?name=Teknisi+Lab&background=e2e8f0&color=475569&size=256" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="font-bold text-lg">Novia Utami Putri, S.T., M.T.</h3>
+                    <p class="text-xs text-gray-500 mb-3">Dosen</p>
+                    <span class="bg-blue-50 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Elektronika</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- FOOTER (Konsisten di semua halaman) -->
+    <footer id="kontak" class="bg-blue-950 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <h2 class="font-extrabold text-base tracking-wide mb-3">TEKNOLOGI REKAYASA<br><span class="text-emerald-400">OTOMOTIF</span></h2>
+                <p class="text-xs text-blue-200 leading-relaxed">
+                    Mempersiapkan engineer terapan otomotif yang kompeten, inovatif, dan berwawasan hijau untuk mobilitas berkelanjutan.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm mb-4 text-emerald-400 uppercase tracking-wider">Navigasi Cepat</h3>
+                <ul class="space-y-2 text-xs text-blue-200">
+                    <li><a href="index.html" class="hover:underline">Beranda</a></li>
+                    <li><a href="kurikulum.html" class="hover:underline">Kurikulum</a></li>
+                    <li><a href="dosen.html" class="hover:underline">Dosen</a></li>
+                    <li><a href="berita.html" class="hover:underline">Berita</a></li>
+                    <li><a href="kerjasama.html" class="hover:underline">Kerjasama</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm mb-4 text-emerald-400 uppercase tracking-wider">Tautan Lain</h3>
+                <ul class="space-y-2 text-xs text-blue-200">
+                    <li><a href="https://www.polinela.ac.id" target="_blank" class="hover:underline">POLINELA</a></li>
+                    <li><a href="https://spo.pmb.polinela.ac.id" target="_blank" class="hover:underline">Penerimaan Mahasiswa Baru</a></li>
+                    <li><a href="https://akademik.polinela.ac.id" target="_blank" class="hover:underline">Layanan Akademik</a></li>
+                    <li><a href="https://newlms.polinela.ac.id" target="_blank" class="hover:underline">E-Learning Polinela</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm mb-4 text-emerald-400 uppercase tracking-wider">Kontak Kami</h3>
+                <ul class="space-y-2 text-xs text-blue-200">
+                    <li>Jl. Soekarno Hatta No.10, Rajabasa, Bandar Lampung 35144</li>
+                    <li>tro@polinela.ac.id</li>
+                    <li>0721-787309</li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 border-t border-blue-900 pt-6 text-center text-xs text-blue-400">
+            &copy; 2026 Program Studi D-IV Teknologi Rekayasa Otomotif - Politeknik Negeri Lampung. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
